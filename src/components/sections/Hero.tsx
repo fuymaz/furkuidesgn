@@ -21,7 +21,10 @@ const IDENTITY_WORDS = ["FURKAN", "DESIGNER", "ARTIST", "DREAMER"];
 function HelloPill({ size }: { size: "sm" | "lg" }) {
   // size sm = mobile (19.5px text, 38px height), lg = desktop (37px text, 72px height)
   // Solid-dark variant: dropped the stepped-lift shadow plate per user request,
-  // pill body is ink with inverted text. Tighter silhouette, more brutal.
+  // pill body is ink with inverted text. The pill's width tracks its content —
+  // Framer Motion's `layout` prop springs the width as WordSwap rotates the
+  // identity word, so the badge hugs each word tightly (FURKAN tight, DESIGNER
+  // wider, etc.) instead of reserving room for the longest variant.
   const small = size === "sm";
   return (
     <motion.div
@@ -30,11 +33,13 @@ function HelloPill({ size }: { size: "sm" | "lg" }) {
       transition={{ duration: 0.7, ease: BRUTAL_EASE, delay: 0.1 }}
       className="relative w-fit"
     >
-      <div
+      <motion.div
+        layout
+        transition={{ layout: { type: "spring", stiffness: 400, damping: 38 } }}
         className={
           small
-            ? "relative flex h-[38px] w-[320px] items-center bg-fg-primary px-[11px]"
-            : "relative flex h-[64px] w-[500px] items-center bg-fg-primary px-[18px]"
+            ? "relative flex h-[38px] w-fit items-center bg-fg-primary px-[11px]"
+            : "relative flex h-[64px] w-fit items-center bg-fg-primary px-[18px]"
         }
       >
         <p
@@ -45,22 +50,16 @@ function HelloPill({ size }: { size: "sm" | "lg" }) {
           }
         >
           <span className="font-bold">{`» HELLO, I'M `}</span>
-          {/* Fixed-width slot prevents pill-internal layout jump as the word swaps. */}
-          <span
-            className={
-              small
-                ? "relative inline-block w-[114px] overflow-hidden align-baseline"
-                : "relative inline-block w-[180px] overflow-hidden align-baseline"
-            }
-          >
-            <WordSwap
-              words={IDENTITY_WORDS}
-              interval={2500}
-              className="font-extrabold"
-            />
-          </span>
+          {/* No fixed-width slot — WordSwap's popLayout mode lets the new word
+              take its natural width immediately, parent `layout` animates the
+              transition. */}
+          <WordSwap
+            words={IDENTITY_WORDS}
+            interval={2500}
+            className="font-extrabold"
+          />
         </p>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }

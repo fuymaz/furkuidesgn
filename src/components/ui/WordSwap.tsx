@@ -27,7 +27,11 @@ export function WordSwap({ words, interval = 2500, className }: Props) {
 
   return (
     <span className={cn("relative inline-block align-baseline", className)}>
-      <AnimatePresence mode="wait" initial={false}>
+      {/* popLayout: the outgoing word is pulled out of normal flow so the
+          incoming one takes the layout slot immediately. This lets parent
+          containers measure the new word's width without a 0-width gap, so
+          a `layout`-animated pill resizes smoothly between words. */}
+      <AnimatePresence mode="popLayout" initial={false}>
         <motion.span
           key={words[index]}
           initial={{ opacity: 0, y: "0.45em" }}
