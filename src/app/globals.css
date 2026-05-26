@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─── COLOR TOKENS ─── */
+  --color-bg-canvas: #f0f0f0;
+  --color-bg-surface-alt: #e2e2e2;
+  --color-bg-inverted: #1b1b1b;
+
+  --color-fg-primary: #1b1b1b;
+  --color-fg-secondary: #4a4a4a;
+  --color-fg-muted: #6b6b6b;
+  --color-fg-inverted: #f2f2f2;
+
+  --color-action-primary: #04ff3a;
+
+  --color-border-default: #1b1b1b;
+
+  /* ─── TYPOGRAPHY ─── */
+  --font-display: var(--font-monument), "Anybody", system-ui, sans-serif;
+  --font-body: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), "SF Mono", monospace;
+
+  /* ─── ANIMATION ─── */
+  --ease-brutal: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --duration-fast: 200ms;
+  --duration-base: 400ms;
+  --duration-slow: 800ms;
+}
+
+:root {
+  /* Spacing constants used as raw CSS vars (not auto-generated as utilities) */
+  --section-y: 72px;
+  --section-x: 80px;
+  --card-gap: 24px;
+  --shadow-offset: 6px;
+}
+
+/* Lenis smooth scroll classes */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+body {
+  background: var(--color-bg-canvas);
+  color: var(--color-fg-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  cursor: none;
+}
+
+/* Respect reduced motion + touch devices keep system cursor */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  body {
+    cursor: auto;
+  }
+}
+
+@media (hover: none) {
+  body {
+    cursor: auto;
+  }
+}
+
+@layer utilities {
+  /* Brutal shadow card — hard 6px offset using ::after, NEVER box-shadow */
+  .brutal-card {
+    position: relative;
+    background: var(--color-bg-surface-alt);
+  }
+  .brutal-card::after {
+    content: "";
+    position: absolute;
+    inset: var(--shadow-offset) calc(var(--shadow-offset) * -1)
+      calc(var(--shadow-offset) * -1) var(--shadow-offset);
+    background: var(--color-fg-primary);
+    z-index: -1;
+    transition: inset var(--duration-fast) var(--ease-brutal);
+  }
+
+  .brutal-card-dark {
+    background: var(--color-bg-inverted);
+    color: var(--color-fg-inverted);
+  }
+  .brutal-card-dark::after {
+    background: var(--color-fg-primary);
+  }
+
+  .tracking-mono {
+    letter-spacing: 0.12em;
+  }
+  .tracking-mono-sm {
+    letter-spacing: 0.08em;
+  }
+
+  .text-acid {
+    color: var(--color-action-primary);
+  }
+  .bg-acid {
+    background-color: var(--color-action-primary);
+  }
+}

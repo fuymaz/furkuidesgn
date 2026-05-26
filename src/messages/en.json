@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "home": "HOME",
+    "myself": "MYSELF",
+    "work": "WORK",
+    "contact": "CONTACT"
+  },
+  "hero": {
+    "tagline": "Istanbul-based designer",
+    "scroll": "SCROLL DOWN"
+  },
+  "myself": {
+    "eyebrow": "↘ EXPERIENCE · DOMAINS · CRAFT",
+    "rightMeta": "12 YRS · MANY HATS · ONE BRAIN",
+    "tagline1": "Brands · Interfaces",
+    "tagline2": "Motion · Identity",
+    "intro": "I design brands, interfaces, and motion. Twelve years and counting — mostly with small teams who care about typography, craft, and work that gets used.",
+    "edu": "EDUCATION",
+    "mail": "MAIL",
+    "social": "SOCIAL"
+  },
+  "skills": {
+    "eyebrow": "↘ TOOLS · STACK · STUDIO",
+    "rightMeta": "EST. 2014",
+    "tagline1": "Tools · Daily craft",
+    "tagline2": "Master + support"
+  },
+  "career": {
+    "eyebrow": "↘ TIMELINE · ROLES · IMPACT",
+    "rightMeta": "12 YRS · MANY HATS",
+    "tagline1": "Roles · Companies",
+    "tagline2": "Timeline · Impact",
+    "shipped": "Shipped Apps",
+    "products": "Product Design"
+  },
+  "work": {
+    "eyebrow": "↘ PROJECTS · CASES · CRAFT",
+    "tagline1": "Projects · Cases",
+    "tagline2": "Brand · Product"
+  },
+  "contact": {
+    "eyebrow": "↘ LET'S TALK · COLLAB · BUILD",
+    "tagline1": "Let's collaborate",
+    "tagline2": "Reach out · build",
+    "heroLine1": "Let's build",
+    "heroLine2": "something together.",
+    "available": "AVAILABLE · OPEN TO NEW PROJECTS",
+    "response": "24H RESPONSE · MON-FRI"
+  },
+  "footer": {
+    "end": "↘ PORTFOLIO · END",
+    "backToTop": "BACK TO TOP",
+    "madeIn": "MADE IN KADIKÖY · WITH SPITE & LOVE",
+    "designedIn": "DESIGNED IN ISTANBUL"
+  }
+}

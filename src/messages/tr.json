@@ -1,0 +1,56 @@
+{
+  "nav": {
+    "home": "ANA SAYFA",
+    "myself": "BEN",
+    "work": "İŞLER",
+    "contact": "İLETİŞİM"
+  },
+  "hero": {
+    "tagline": "İstanbul merkezli tasarımcı",
+    "scroll": "AŞAĞI KAYDIR"
+  },
+  "myself": {
+    "eyebrow": "↘ DENEYİM · ALANLAR · ZANAAT",
+    "rightMeta": "12 YIL · ÇOK ŞAPKA · TEK BEYİN",
+    "tagline1": "Markalar · Arayüzler",
+    "tagline2": "Hareket · Kimlik",
+    "intro": "Markalar, arayüzler ve hareket tasarlıyorum. On iki yıl ve sayıyorum — çoğunlukla küçük ekiplerle, tipografiyi, zanaatı ve gerçekten kullanılan işi önemseyenlerle çalışarak.",
+    "edu": "EĞİTİM",
+    "mail": "E-POSTA",
+    "social": "SOSYAL"
+  },
+  "skills": {
+    "eyebrow": "↘ ARAÇLAR · STACK · STÜDYO",
+    "rightMeta": "EST. 2014",
+    "tagline1": "Araçlar · Günlük zanaat",
+    "tagline2": "Usta + destek"
+  },
+  "career": {
+    "eyebrow": "↘ ZAMAN ÇİZGİSİ · ROLLER · ETKİ",
+    "rightMeta": "12 YIL · ÇOK ŞAPKA",
+    "tagline1": "Roller · Şirketler",
+    "tagline2": "Zaman çizgisi · Etki",
+    "shipped": "Yayınlanan Uygulama",
+    "products": "Ürün Tasarımı"
+  },
+  "work": {
+    "eyebrow": "↘ PROJELER · ÖRNEKLER · ZANAAT",
+    "tagline1": "Projeler · Vakalar",
+    "tagline2": "Marka · Ürün"
+  },
+  "contact": {
+    "eyebrow": "↘ KONUŞALIM · İŞBİRLİĞİ · İNŞA",
+    "tagline1": "İşbirliği yapalım",
+    "tagline2": "Ulaş · birlikte inşa et",
+    "heroLine1": "Birlikte",
+    "heroLine2": "bir şey inşa edelim.",
+    "available": "MÜSAİT · YENİ PROJELERE AÇIK",
+    "response": "24 SAAT İÇİNDE YANIT · PZT-CUM"
+  },
+  "footer": {
+    "end": "↘ PORTFOLYO · SON",
+    "backToTop": "BAŞA DÖN",
+    "madeIn": "KADIKÖY'DE YAPILDI · NEFRET & SEVGİ İLE",
+    "designedIn": "İSTANBUL'DA TASARLANDI"
+  }
+}
